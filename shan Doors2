@@ -1,0 +1,25 @@
+local addconnect
+
+        addconnect = workspace.CurrentRooms.ChildAdded:Connect(function(room)
+
+            local assets = room:WaitForChild("Assets")
+
+            local paintings = assets:WaitForChild("Paintings",2)
+
+            
+
+            if paintings then
+
+                local Door = paintings:WaitForChild("MovingDoor",2)
+
+            
+
+                if Door then
+
+                    Door:Destroy() 
+
+                end 
+
+            end
+
+        end)
