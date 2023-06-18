@@ -1,0 +1,33 @@
+local function check(room)
+
+            local Door = room:WaitForChild("RoomsDoor_Entrance",2)
+
+            
+
+            if Door then
+
+                local prompt = Door:WaitForChild("Door"):WaitForChild("EnterPrompt")
+
+                prompt.Enabled = true
+
+            end 
+
+        end
+
+        
+
+        local addconnect
+
+        addconnect = workspace.CurrentRooms.ChildAdded:Connect(function(room)
+
+            check(room)
+
+        end)
+
+        
+
+        for i,v in pairs(workspace.CurrentRooms:GetChildren()) do
+
+            check(room)
+
+        end
